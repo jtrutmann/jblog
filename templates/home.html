@@ -10,15 +10,7 @@
       {{ object.created_at | date:"F j, Y"}}
     </span>
     <h1 class="blog-title"><a class="hvr-fade" href="{% url 'entry_detail' slug=object.slug %}">{{object.title}}</a></h1>
-<!--     <p class="meta">
-      {{ object.created_at }} |
-      Tagged under {{  object.tags.all|join:", " }}
-    </p> -->
-    <!-- <hr></hr> -->
     {{ object.body|markdown }}
   </div>
-  <!-- <hr></hr> -->
 {% endfor %}
 {% endblock %}
-
-<!-- <a href="{% url "entry_detail" slug=object.slug %}"> -->
