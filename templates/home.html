@@ -4,13 +4,20 @@
 {% block blog_entries %}
 {% for object in object_list %}
   <div class="post">
-    <h2>{{ object.title }}</a></h2>
-    <p class="meta">
-      {{ object.created }} |
+  <div class="stamp">
+  </div>
+    <span class="meta">
+      {{ object.created_at | date:"F j, Y"}}
+    </span>
+    <h1 class="blog-title"><a class="hvr-fade" href="{% url 'entry_detail' slug=object.slug %}">{{object.title}}</a></h1>
+<!--     <p class="meta">
+      {{ object.created_at }} |
       Tagged under {{  object.tags.all|join:", " }}
-    </p>
+    </p> -->
+    <!-- <hr></hr> -->
     {{ object.body|markdown }}
   </div>
+  <!-- <hr></hr> -->
 {% endfor %}
 {% endblock %}
 

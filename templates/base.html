@@ -8,11 +8,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="{% static "icons/favicon.ico" %}">
-    <link href="/feed/" rel="alternate" type="application/rss+xml" title="Q Blog Feed" />
+    <link href="/feed/" rel="alternate" type="application/rss+xml" title="J Blog Feed" />
     <title>Blog Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/hover.css" %}" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900,700,600,300,200|Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
     <link href="{% static "css/blog.css" %}" rel="stylesheet">
@@ -25,29 +30,39 @@
   </head>
 
   <body>
+    <div class="blog-superhead row">
+      <img class="super-icon" src="{% static "images/facebook.png" %}">
+      <img class="super-icon" src="{% static "images/twitter.png" %}">
+      <img class="super-icon" src="{% static "images/fire.png" %}">
+    </div>
 
-    <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
+    <div class="blog-masthead row">
+<!--       <div class="container row"> -->
+      <div class="left-nav col-sm-offset-1 col-sm-5"> <h1 class="nav-title alt"> JULIAN TRUTMANN </h1>
+      <p class="nav-subtitle"> Creator, Designer, Entreprenuer </p>
+      <!-- <h1 class="nav-title"> postmachina. </h1>  --></div>
+      <div class="right-nav col-sm-5"> <h1 class="nav-title alt-color"> POSTMACHINA. </h1>
+      <p class="nav-subtitle"> Life After The Machine. </p></div>
+<!--         <nav class="blog-nav">
           <a class="blog-nav-item active" href="{% url "index" %}">Home</a>
           <a class="blog-nav-item" href="#">New features</a>
           <a class="blog-nav-item" href="#">Press</a>
           <a class="blog-nav-item" href="#">New hires</a>
           <a class="blog-nav-item" href="#">About</a>
-        </nav>
-      </div>
+        </nav> -->
+      <!-- </div> -->
     </div>
 
     <div class="container">
 
       <div class="blog-header">
-        <h1 class="blog-title">The Bootstrap Blog</h1>
-        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+<!--         <h1 class="blog-title">The Bootstrap Blog</h1>
+        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p> -->
       </div>
 
       <div class="row">
 
-        <div class="col-sm-8 blog-main">
+        <div class="col-sm-8 col-sm-offset-2 blog-main">
           {% block blog_entries %} {% endblock %}
 
           {% if is_paginated %}
@@ -58,7 +73,7 @@
     {% endif %}
         </div><!-- /.blog-main -->
 
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+<!--         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
@@ -74,6 +89,11 @@
       <p>
         <a href="#">Back to top</a>
       </p>
+    </div>
+    <div class="blog-superfooter row">
+      <img class="super-footer-icon" src="{% static "images/facebook.png" %}">
+      <img class="super-footer-icon" src="{% static "images/twitter.png" %}">
+      <img class="super-footer-icon" src="{% static "images/fire.png" %}">
     </div>
 
 
