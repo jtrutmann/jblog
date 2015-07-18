@@ -20,6 +20,9 @@
     <!-- Custom styles for this template -->
     <link href="{% static "css/blog.css" %}" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="{% static "js/parallax.min.js" %}"></script>
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -29,17 +32,19 @@
 
   <body>
     <div class="blog-superhead row">
-      <img class="super-icon" src="{% static "images/facebook.png" %}">
+<!--       <img class="super-icon" src="{% static "images/facebook.png" %}"> -->
       <img class="super-icon" src="{% static "images/twitter.png" %}">
-      <img class="super-icon" src="{% static "images/fire.png" %}">
+<!--       <img class="super-icon" src="{% static "images/fire.png" %}"> -->
     </div>
 
-    <div class="blog-masthead row">
+    <div class="blog-masthead row parallax-window" data-parallax="scroll" data-position="0% -70%" data-image-src="{% static "images/desk_001.jpg" %}">
 <!--       <div class="container row"> -->
-      <div class="left-nav col-sm-offset-1 col-sm-5"> <h1 class="nav-title alt"> JULIAN TRUTMANN </h1>
-      <p class="nav-subtitle"> Creator, Designer, Entreprenuer </p>
+      <div class="left-nav col-sm-offset-1 col-sm-4"> <h1 class="nav-title alt"> JULIAN TRUTMANN </h1>
+      <p class="nav-subtitle"> Creator, Designer, Entreprenuer. </p>
+      <p> Founder and CEO of <a class="light" href="https://twitter.com/juliantrutmann">Brave Digital Entertainment</a>. I like rainbows, unicorns, and bubble-gum. This is my personal blog about life after the machine.</p>
+        <p> Follow me <a class="light" href="https://twitter.com/juliantrutmann">@JulianTrutmann</a> or <a class="light" href="https://twitter.com/bravedigitalent">@BraveDigitalEnt</a></p>
       <!-- <h1 class="nav-title"> postmachina. </h1>  --></div>
-      <div class="right-nav col-sm-5"> <h1 class="nav-title alt-color"> POSTMACHINA. </h1>
+      <div class="right-nav col-sm-offset-1 col-sm-5"> <h1 class="nav-title "> POSTMACHINA. </h1>
       <p class="nav-subtitle"> Life After The Machine. </p></div>
 <!--         <nav class="blog-nav">
           <a class="blog-nav-item active" href="{% url "index" %}">Home</a>
@@ -50,6 +55,10 @@
         </nav> -->
       <!-- </div> -->
     </div>
+    <div class="blog-portrait">
+      <img class="blog-portrait-img" src="{% static "images/portrait_001.png" %}">
+    </div>
+    <div class="blog-subhead"></div>
 
     <div class="container">
 
@@ -60,7 +69,7 @@
 
       <div class="row">
 
-        <div class="col-sm-8 col-sm-offset-2 blog-main">
+        <div class="col-sm-9 col-sm-offset-2 blog-main">
           {% block blog_entries %} {% endblock %}
 
           {% if is_paginated %}
@@ -83,15 +92,13 @@
     </div><!-- /.container -->
 
     <div class="blog-footer">
-      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
       <p>
         <a href="#">Back to top</a>
       </p>
     </div>
     <div class="blog-superfooter row">
-      <img class="super-footer-icon" src="{% static "images/facebook.png" %}">
       <img class="super-footer-icon" src="{% static "images/twitter.png" %}">
-      <img class="super-footer-icon" src="{% static "images/fire.png" %}">
+<!--       <p>This is a test of stuff, Things and other stuff</p> -->
     </div>
 
 
